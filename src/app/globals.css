@@ -8,6 +8,17 @@
   --color-brand-dark: #1a1a2e;
   
   --font-sans: var(--font-inter);
+
+  --animate-scroll-left: scroll-left 40s linear infinite;
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 :root {

@@ -22,7 +22,7 @@ export default function Team() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4">Member Tim</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mt-6 mb-4">Member Tim</h2>
           <div className="w-24 h-1 bg-brand-blue mx-auto rounded-full"></div>
         </div>
 

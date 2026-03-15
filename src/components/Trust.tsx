@@ -25,8 +25,17 @@ export default function Trust() {
   ];
 
   const clients = [
-    "RUKUN RAHARJA", "PLN ENJINIRING", "SARATOGA", 
-    "PERTAMINA", "ANGKASA PURA", "INDOPELITA", "KRAKATAU STEEL", "KIMIA FARMA"
+    { name: "Askrindo", src: "/images/clients/Askrindo.png" },
+    { name: "PLN Enjiniring", src: "/images/clients/PLN-Enjiniring.png" },
+    { name: "Saratoga", src: "/images/clients/Saratoga.png" },
+    { name: "Afi Tour", src: "/images/clients/afitour.webp" },
+    { name: "Cuan Group", src: "/images/clients/cuangroup.webp" },
+    { name: "Energas", src: "/images/clients/energas.png" },
+    { name: "Pertamina", src: "/images/clients/pertamina.png" },
+    { name: "Raharja Energi Cepu", src: "/images/clients/raharja-energi-cepu.png" },
+    { name: "Rukun Raharja", src: "/images/clients/rukun-raharja.png" },
+    { name: "Sangil Indonesia", src: "/images/clients/sangil-indonesia.png" },
+    { name: "Trinusa Resources", src: "/images/clients/trinusa-resources.png" }
   ];
 
   return (
@@ -57,30 +66,27 @@ export default function Trust() {
           <h4 className="text-gray-500 font-medium uppercase tracking-wider text-sm">Dipercaya Oleh Berbagai Perusahaan Terkemuka</h4>
         </div>
 
-        <div className="relative flex overflow-x-hidden group">
-          <div className="py-8 animate-marquee whitespace-nowrap flex items-center gap-16">
+        <div className="relative flex overflow-hidden group py-10">
+          {/* Fading Edges left & right */}
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+
+          <div className="py-8 animate-scroll-left group-hover:[animation-play-state:paused] whitespace-nowrap flex items-center gap-16 w-max px-8">
             {clients.map((client, idx) => (
-              <span key={`a-${idx}`} className="text-2xl font-bold text-gray-300 hover:text-brand-blue transition-colors">
-                {client}
-              </span>
+              <img 
+                key={`a-${idx}`} 
+                src={client.src} 
+                alt={client.name} 
+                className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 mix-blend-multiply cursor-default"
+              />
             ))}
             {clients.map((client, idx) => (
-              <span key={`b-${idx}`} className="text-2xl font-bold text-gray-300 hover:text-brand-blue transition-colors">
-                {client}
-              </span>
-            ))}
-          </div>
-          
-          <div className="absolute top-0 py-8 animate-marquee2 whitespace-nowrap flex items-center gap-16">
-            {clients.map((client, idx) => (
-              <span key={`c-${idx}`} className="text-2xl font-bold text-gray-300 hover:text-brand-blue transition-colors">
-                {client}
-              </span>
-            ))}
-            {clients.map((client, idx) => (
-              <span key={`d-${idx}`} className="text-2xl font-bold text-gray-300 hover:text-brand-blue transition-colors">
-                {client}
-              </span>
+              <img 
+                key={`b-${idx}`} 
+                src={client.src} 
+                alt={client.name} 
+                className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 mix-blend-multiply cursor-default"
+              />
             ))}
           </div>
         </div>
