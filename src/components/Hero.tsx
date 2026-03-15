@@ -9,7 +9,7 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/20 text-brand-blue-light text-sm font-medium mb-6 border border-brand-blue/30 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/20 text-white text-sm font-medium mb-6 border border-brand-blue/30 backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue-light opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-blue-light"></span>
@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed relative z-10">
-            Menyatukan keahlian akademis dan pengalaman praktis selama lebih dari 15 tahun. Kami mensederhanakan kerumitan demi solusi yang jelas untuk meraih tujuan finansial Anda.
+            Menyatukan keahlian akademis dan pengalaman praktis selama lebih dari 15 tahun. Kami menyederhanakan kerumitan demi solusi yang jelas untuk meraih tujuan finansial Anda.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

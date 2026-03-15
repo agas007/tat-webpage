@@ -75,15 +75,15 @@ export default function Footer() {
             </ul>
 
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all">
+              <a href="https://www.instagram.com/tatax.solution" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all">
                 <Instagram size={18} />
                 <span className="sr-only">Instagram Tatax.solution</span>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all">
+              <a href="https://twitter.com/tataxsolution" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all">
                 <Twitter size={18} />
                 <span className="sr-only">Twitter Tataxsolution</span>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all">
+              <a href="https://www.facebook.com/tataxsolution" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all">
                 <Facebook size={18} />
                 <span className="sr-only">Facebook Tataxsolution</span>
               </a>
