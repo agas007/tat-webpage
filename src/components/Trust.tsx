@@ -1,4 +1,4 @@
-import { FileCheck, ShieldCheck, Scale, Award } from "lucide-react";
+import { FileCheck, ShieldCheck, Scale, Award } from "lucide-react"; 
 
 export default function Trust() {
   const credentials = [

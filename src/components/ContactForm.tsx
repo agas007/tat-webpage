@@ -59,9 +59,10 @@ export default function ContactForm() {
                 <label htmlFor="reason" className="sr-only">Alasan untuk menghubungi</label>
                 <select 
                   id="reason" 
+                  defaultValue=""
                   className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all appearance-none bg-white text-gray-500"
                 >
-                  <option value="" disabled selected>Alasan untuk menghubungi</option>
+                  <option value="" disabled>Alasan untuk menghubungi</option>
                   <option value="konsultasi">Konsultasi Layanan</option>
                   <option value="academy">Informasi TATax Academy</option>
                   <option value="karir">Peluang Karir</option>
