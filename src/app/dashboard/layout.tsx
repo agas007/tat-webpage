@@ -1,11 +1,25 @@
 import Link from "next/link";
 import { LayoutDashboard, Users, CheckSquare, FileText, Settings, LogOut, Bell } from "lucide-react";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import LogoutButton from "@/components/LogoutButton";
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth();
+
+  if (!session?.user) {
+    redirect("/login");
+  }
+
+  // Basic RBAC: Redirect clients trying to access admin dashboard
+  if (session.user.role === "Client") {
+    redirect("/client-portal");
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
@@ -36,9 +50,7 @@ export default function DashboardLayout({
           <Link href="/dashboard/settings" className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors">
             <Settings size={18} /> Pengaturan
           </Link>
-          <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-500/10 text-red-400 mt-1 transition-colors">
-            <LogOut size={18} /> Keluar
-          </button>
+          <LogoutButton />
         </div>
       </aside>
 
@@ -56,11 +68,11 @@ export default function DashboardLayout({
             </button>
             <div className="flex items-center gap-3 pl-4 border-l border-gray-200">
               <div className="text-right hidden sm:block">
-                <p className="text-sm border-b font-medium text-brand-dark leading-tight">M. Ma'shum</p>
-                <p className="text-xs text-brand-blue">Team Supervisor</p>
+                <p className="text-sm border-b font-medium text-brand-dark leading-tight">{session.user.name}</p>
+                <p className="text-xs text-brand-blue">{session.user.role}</p>
               </div>
-              <div className="w-9 h-9 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-sm">
-                MM
+              <div className="w-9 h-9 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-sm uppercase">
+                {session.user.name?.substring(0, 2) || "U"}
               </div>
             </div>
           </div>

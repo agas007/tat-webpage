@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { LogOut, Home, FileText, UploadCloud, Bell } from "lucide-react";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import LogoutButton from "@/components/LogoutButton";
 
-export default function ClientPortalLayout({
+export default async function ClientPortalLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth();
+
+  if (!session?.user) {
+    redirect("/login");
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Top Navbar */}
@@ -39,11 +48,11 @@ export default function ClientPortalLayout({
               </button>
               <div className="flex items-center gap-3">
                 <div className="text-right hidden sm:block">
-                  <p className="text-sm font-medium text-white leading-tight">PT. Krakatau Steel</p>
-                  <p className="text-xs text-brand-blue-light">Klien Aktif</p>
+                  <p className="text-sm font-medium text-white leading-tight">{session.user.name}</p>
+                  <p className="text-xs text-brand-blue-light">{session.user.role}</p>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-white text-brand-dark flex items-center justify-center font-bold text-sm">
-                  KS
+                <div className="w-10 h-10 rounded-full bg-white text-brand-dark flex items-center justify-center font-bold text-sm uppercase">
+                  {session.user.name?.substring(0, 2) || "U"}
                 </div>
               </div>
             </div>
@@ -62,9 +71,7 @@ export default function ClientPortalLayout({
       <footer className="bg-white border-t border-gray-200 py-6 text-center text-sm text-gray-500">
         <p>Copyright © 2026 PT Global Siber Strategi - TAT Digital Transformation</p>
         <div className="mt-2 flex items-center justify-center gap-4">
-          <button className="text-red-500 hover:text-red-700 font-medium transition-colors flex items-center gap-1">
-            <LogOut size={16} /> Keluar (Sign Out)
-          </button>
+          <LogoutButton className="text-red-500 hover:text-red-700 font-medium transition-colors flex items-center gap-1" />
         </div>
       </footer>
     </div>
