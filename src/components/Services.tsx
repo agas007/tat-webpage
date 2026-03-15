@@ -4,7 +4,7 @@ export default function Services() {
   const services = [
     {
       title: "Tax Compliance",
-      icon: <Calculator className="w-8 h-8 text-brand-blue" />,
+      icon: <Calculator className="w-8 h-8" />,
       features: [
         "SPT Tahunan PPh Orang Pribadi",
         "SPT Tahunan PPh Badan",
@@ -15,7 +15,7 @@ export default function Services() {
     },
     {
       title: "Tax Audit & Dispute",
-      icon: <Scale className="w-8 h-8 text-brand-blue" />,
+      icon: <Scale className="w-8 h-8" />,
       features: [
         "Pendampingan Pemeriksaan",
         "Dokumen Keberatan Pajak",
@@ -26,7 +26,7 @@ export default function Services() {
     },
     {
       title: "Specialized Services",
-      icon: <Briefcase className="w-8 h-8 text-brand-blue" />,
+      icon: <Briefcase className="w-8 h-8" />,
       features: [
         "Strategic Tax Planning",
         "Transfer Pricing Documentation",
@@ -37,7 +37,7 @@ export default function Services() {
     },
     {
       title: "Accounting Services",
-      icon: <FileSpreadsheet className="w-8 h-8 text-brand-blue" />,
+      icon: <FileSpreadsheet className="w-8 h-8" />,
       features: [
         "Penyusunan Laporan Keuangan",
         "Review Akuntansi Berkala",
