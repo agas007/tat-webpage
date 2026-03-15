@@ -24,7 +24,7 @@ export default function Insights() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section id="wawasan" className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         
         <div className="flex justify-between items-end mb-12">
