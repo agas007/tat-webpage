@@ -41,7 +41,7 @@ export default function ContactForm() {
                     type="email" 
                     id="email" 
                     placeholder="Email Anda" 
-                    className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+                    className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
                   />
                 </div>
                 <div>
@@ -50,7 +50,7 @@ export default function ContactForm() {
                     type="tel" 
                     id="phone" 
                     placeholder="Nomor Ponsel Anda" 
-                    className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+                    className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
                   />
                 </div>
               </div>
@@ -75,7 +75,7 @@ export default function ContactForm() {
                   id="message" 
                   rows={5}
                   placeholder="Bagaimana kami dapat membantu Anda?" 
-                  className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all resize-none"
+                  className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all resize-none"
                 ></textarea>
               </div>
               
