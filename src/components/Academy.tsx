@@ -5,19 +5,19 @@ export default function Academy() {
     {
       title: "Brevet Pajak A & B",
       type: "Flexible / Hybrid",
-      icon: <GraduationCap className="w-8 h-8 text-brand-blue" />,
+      icon: <GraduationCap className="w-8 h-8" />,
       desc: "Program pelatihan komprehensif bagi calon praktisi pajak untuk mendapatkan sertifikasi Brevet A dan B dengan kurikulum terstruktur dan pengajar praktisi ahli."
     },
     {
       title: "In-House Training",
       type: "Corporate",
-      icon: <Users className="w-8 h-8 text-brand-blue" />,
+      icon: <Users className="w-8 h-8" />,
       desc: "Pelatihan khusus perpajakan yang disesuaikan dengan kebutuhan spesifik dan masalah yang dihadapi oleh perusahaan Anda langsung di lokasi Anda."
     },
     {
       title: "Tax Talkshows & Seminar",
       type: "Event",
-      icon: <BookOpen className="w-8 h-8 text-brand-blue" />,
+      icon: <BookOpen className="w-8 h-8" />,
       desc: "Diskusi interaktif dan seminar rutin membahas regulasi terbaru dan isu-isu perpajakan terkini bersama narasumber ahli dari DJP maupun praktisi."
     }
   ];
@@ -31,7 +31,7 @@ export default function Academy() {
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <h4 className="text-brand-blue-light font-semibold uppercase tracking-wider text-sm mb-2">Pendidikan & Pelatihan</h4>
+            <h4 className="text-blue-400 font-semibold uppercase tracking-wider text-sm mb-2">Pendidikan & Pelatihan</h4>
             <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">TATax Academy.</h2>
             <p className="text-gray-300 text-lg">Dedikasi kami tidak hanya pada layanan konsultasi, melainkan juga pada pengembangan sumber daya manusia melalui edukasi perpajakan yang berkualitas.</p>
           </div>
@@ -48,7 +48,7 @@ export default function Academy() {
                   {prog.icon}
                 </div>
               </div>
-              <div className="inline-block px-3 py-1 rounded-full bg-brand-blue/30 text-brand-blue-light text-xs font-semibold tracking-wider uppercase mb-4">
+              <div className="inline-block px-3 py-1 rounded-full bg-brand-blue/30 text-blue-300 text-xs font-semibold tracking-wider uppercase mb-4">
                 {prog.type}
               </div>
               <h3 className="text-2xl font-bold mb-3">{prog.title}</h3>
