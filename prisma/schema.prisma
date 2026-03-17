@@ -1,12 +1,7 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
-// For local testing & development, we use SQLite.
-// You can easily switch this provider to "postgresql" or "supabase" by modifying the provider and DATABASE_URL.
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
@@ -17,41 +12,38 @@ model User {
   name          String?
   email         String?   @unique
   password      String?
-  role          String    @default("Client") // "Admin", "Partner", "TeamLeader", "TeamStaff", "Publisher", "Client"
+  role          String    @default("Client")
   image         String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-
-  tasksAssigned Task[]    @relation("TaskAssignee")
   projectsOwned Project[] @relation("ProjectClient")
+  tasksAssigned Task[]    @relation("TaskAssignee")
 }
 
 model Project {
-  id          String   @id @default(cuid())
-  clientId    String
-  client      User     @relation("ProjectClient", fields: [clientId], references: [id])
-  name        String
-  status      String   @default("In Progress") // In Progress, Review, Done
-  progress    Int      @default(0)
-  lastUpdate  DateTime @default(now())
-  nextAction  String?
-  
-  tasks       Task[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id         String   @id @default(cuid())
+  clientId   String
+  name       String
+  status     String   @default("In Progress")
+  progress   Int      @default(0)
+  lastUpdate DateTime @default(now())
+  nextAction String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  client     User     @relation("ProjectClient", fields: [clientId], references: [id])
+  tasks      Task[]
 }
 
 model Task {
-  id          String   @id @default(cuid())
-  title       String
-  projectId   String
-  project     Project  @relation(fields: [projectId], references: [id])
-  assigneeId  String?
-  assignee    User?    @relation("TaskAssignee", fields: [assigneeId], references: [id])
-  status      String   @default("todo") 
-  priority    String   @default("Medium") // Low, Medium, High
-  dueDate     DateTime?
-  
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id         String    @id @default(cuid())
+  title      String
+  projectId  String
+  assigneeId String?
+  status     String    @default("todo")
+  priority   String    @default("Medium")
+  dueDate    DateTime?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  assignee   User?     @relation("TaskAssignee", fields: [assigneeId], references: [id])
+  project    Project   @relation(fields: [projectId], references: [id])
 }
