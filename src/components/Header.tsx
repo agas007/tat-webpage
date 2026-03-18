@@ -37,17 +37,17 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
-          <Link href="#tentang" className="text-gray-600 dark:text-gray-300 hover:text-brand-blue dark:hover:text-brand-blue-light transition-colors">
+        <nav className="hidden lg:flex items-center gap-8 text-sm font-semibold">
+          <Link href="#tentang" className="text-foreground hover:text-brand-blue transition-colors">
             Siapa Kami
           </Link>
-          <Link href="#layanan" className="text-gray-600 dark:text-gray-300 hover:text-brand-blue dark:hover:text-brand-blue-light transition-colors">
+          <Link href="#layanan" className="text-foreground hover:text-brand-blue transition-colors">
             Keahlian Kami
           </Link>
-          <Link href="#tim" className="text-gray-600 dark:text-gray-300 hover:text-brand-blue dark:hover:text-brand-blue-light transition-colors">
+          <Link href="#tim" className="text-foreground hover:text-brand-blue transition-colors">
             Kepemimpinan
           </Link>
-          <Link href="#wawasan" className="text-gray-600 dark:text-gray-300 hover:text-brand-blue dark:hover:text-brand-blue-light transition-colors">
+          <Link href="#wawasan" className="text-foreground hover:text-brand-blue transition-colors">
             Wawasan
           </Link>
         </nav>
@@ -57,7 +57,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4">
             <Link 
               href="/dashboard" 
-              className="text-sm font-medium text-brand-dark dark:text-gray-200 hover:text-brand-blue dark:hover:text-brand-blue-light transition-colors"
+              className="text-sm font-semibold text-foreground hover:text-brand-blue transition-colors"
             >
               Portal Login
             </Link>

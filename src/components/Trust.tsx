@@ -39,7 +39,7 @@ export default function Trust() {
   ];
 
   return (
-    <section className="py-20 bg-background dark:bg-black border-t border-b border-border transition-colors">
+    <section className="py-24 bg-background dark:bg-section-bg border-t border-b border-border transition-colors">
       <div className="container mx-auto px-4 md:px-6">
         
         {/* Legality Section */}
@@ -68,25 +68,27 @@ export default function Trust() {
 
         <div className="relative flex overflow-hidden group py-10">
           {/* Fading Edges left & right */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background dark:from-black to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background dark:from-black to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background dark:from-section-bg to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background dark:from-section-bg to-transparent z-10 pointer-events-none"></div>
 
-          <div className="py-8 animate-scroll-left group-hover:[animation-play-state:paused] whitespace-nowrap flex items-center gap-16 w-max px-8">
+          <div className="py-8 animate-scroll-left group-hover:[animation-play-state:paused] whitespace-nowrap flex items-center gap-12 w-max px-8">
             {clients.map((client, idx) => (
-              <img 
-                key={`a-${idx}`} 
-                src={client.src} 
-                alt={client.name} 
-                className="h-12 md:h-16 w-auto object-contain grayscale invert dark:invert-0 hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 cursor-default"
-              />
+              <div key={`a-${idx}`} className="h-20 lg:h-24 px-8 py-4 bg-white rounded-xl shadow-sm flex items-center justify-center transition-all hover:shadow-md hover:scale-105 group/logo">
+                <img 
+                  src={client.src} 
+                  alt={client.name} 
+                  className="h-full w-auto max-w-[120px] object-contain grayscale group-hover/logo:grayscale-0 transition-all duration-300"
+                />
+              </div>
             ))}
             {clients.map((client, idx) => (
-              <img 
-                key={`b-${idx}`} 
-                src={client.src} 
-                alt={client.name} 
-                className="h-12 md:h-16 w-auto object-contain grayscale invert dark:invert-0 hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 cursor-default"
-              />
+              <div key={`b-${idx}`} className="h-20 lg:h-24 px-8 py-4 bg-white rounded-xl shadow-sm flex items-center justify-center transition-all hover:shadow-md hover:scale-105 group/logo">
+                <img 
+                  src={client.src} 
+                  alt={client.name} 
+                  className="h-full w-auto max-w-[120px] object-contain grayscale group-hover/logo:grayscale-0 transition-all duration-300"
+                />
+              </div>
             ))}
           </div>
         </div>
