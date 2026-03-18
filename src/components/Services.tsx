@@ -55,10 +55,10 @@ export default function Services() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
             <h4 className="text-brand-blue dark:text-brand-blue-light font-semibold uppercase tracking-wider text-sm mb-2">Layanan Kami</h4>
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark dark:text-white mb-4 leading-tight">Jelajahi Keahlian Kami.</h2>
-            <p className="text-gray-600 dark:text-gray-300 text-lg">Solusi pajak komprehensif dan akuntansi berkualitas tinggi yang dirancang khusus untuk mengoptimalkan kinerja dan pertumbuhan perusahaan Anda.</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 leading-tight">Jelajahi Keahlian Kami.</h2>
+            <p className="text-muted-foreground text-lg">Solusi pajak komprehensif dan akuntansi berkualitas tinggi yang dirancang khusus untuk mengoptimalkan kinerja dan pertumbuhan perusahaan Anda.</p>
           </div>
-          <a href="#konsultasi" className="hidden md:inline-flex px-6 py-3 rounded-md bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-blue-light font-semibold hover:bg-brand-blue hover:text-white transition-colors">
+          <a href="#konsultasi" className="hidden md:inline-flex px-6 py-3 rounded-md bg-muted text-foreground font-semibold hover:bg-brand-blue hover:text-white transition-colors border border-border">
             Konsultasi Layanan
           </a>
         </div>
@@ -67,18 +67,18 @@ export default function Services() {
           {services.map((service, idx) => (
             <div key={idx} className="group rounded-2xl border border-border bg-card p-8 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_10px_40px_rgb(0,77,153,0.08)] transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
               
-              <div className="w-16 h-16 rounded-xl bg-brand-silver dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+              <div className="w-16 h-16 rounded-xl bg-muted flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
                 <div className="text-brand-blue dark:text-brand-blue-light group-hover:text-white transition-colors">
                   {service.icon}
                 </div>
               </div>
               
-              <h3 className="text-2xl font-bold text-brand-dark dark:text-white mb-4">{service.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow">{service.desc}</p>
+              <h3 className="text-2xl font-bold text-foreground mb-4">{service.title}</h3>
+              <p className="text-muted-foreground mb-6 flex-grow">{service.desc}</p>
               
-              <ul className="space-y-3 pt-6 border-t border-gray-100 dark:border-gray-700">
+              <ul className="space-y-3 pt-6 border-t border-border">
                 {service.features.map((feat, i) => (
-                  <li key={i} className="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <li key={i} className="flex items-center text-sm font-medium text-foreground/80">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-blue dark:bg-brand-blue-light mr-3 opacity-70"></span>
                     {feat}
                   </li>

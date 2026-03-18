@@ -19,9 +19,7 @@ export default function Team() {
   };
 
   return (
-    <section className="py-20 bg-background dark:bg-section-bg border-t border-border relative overflow-hidden transition-colors">
-      {/* Decorative background curve */}
-      <div className="absolute top-0 inset-x-0 h-32 bg-card rounded-b-[50%] scale-x-150 transform -translate-y-16"></div>
+    <section className="py-20 bg-background dark:bg-section-bg relative overflow-hidden transition-colors">
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         

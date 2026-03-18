@@ -36,8 +36,8 @@ export default function Insights() {
         <div className="flex justify-between items-end mb-12">
           <div className="max-w-3xl">
             <h4 className="text-brand-blue dark:text-brand-blue-light font-semibold uppercase tracking-wider text-sm mb-2">Wawasan</h4>
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark dark:text-white mb-4">Publikasi Terkini</h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">Ikuti perkembangan regulasi perpajakan terbaru dan analisis mendalam dari tim ahli kami.</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Publikasi Terkini</h2>
+            <p className="text-muted-foreground text-lg">Ikuti perkembangan regulasi perpajakan terbaru dan analisis mendalam dari tim ahli kami.</p>
           </div>
           <Link href="#wawasan" className="hidden sm:flex items-center gap-2 text-brand-blue font-semibold hover:text-brand-blue-dark transition-colors group">
             Lihat Semua Artikel
@@ -45,22 +45,22 @@ export default function Insights() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-gray-100 pt-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-border pt-8">
           {articles.map((article, idx) => (
-            <div key={idx} className="group cursor-pointer flex flex-col h-full">
-              <div className="relative h-64 overflow-hidden rounded-xl mb-6">
+            <div key={idx} className="group cursor-pointer flex flex-col h-full rounded-2xl overflow-hidden border border-border bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="relative h-48 overflow-hidden">
                 <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute top-4 left-4 bg-card px-3 py-1 text-xs font-bold rounded shadow-sm text-foreground">
+                <div className="absolute top-4 left-4 bg-brand-blue text-white px-3 py-1 text-[10px] font-bold rounded uppercase tracking-wider">
                   {article.tag}
                 </div>
               </div>
               
-              <div className="p-8 flex flex-col flex-1 bg-card transition-colors">
-                <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
-                  <span className="flex items-center gap-1"><Calendar size={14} /> {article.date}</span>
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex items-center gap-2 text-[11px] text-muted-foreground mb-3 font-semibold uppercase tracking-tight">
+                  <Calendar size={12} className="text-brand-blue" /> {article.date} — {article.category}
                 </div>
-                <h3 className="text-xl font-bold text-brand-dark dark:text-white mb-3 group-hover:text-brand-blue transition-colors leading-tight">{article.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-2">{article.desc}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-brand-blue transition-colors leading-snug">{article.title}</h3>
+                <p className="text-muted-foreground text-sm mb-6 line-clamp-3">{article.desc}</p>
                 <div className="mt-auto flex items-center text-brand-blue dark:text-brand-blue-light font-bold text-sm">
                   Baca Selengkapnya
                   <ArrowRight size={18} className="ml-1 group-hover:translate-x-1 transition-transform" />

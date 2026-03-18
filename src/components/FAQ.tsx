@@ -39,19 +39,19 @@ export default function FAQ() {
         
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h4 className="text-brand-blue dark:text-brand-blue-light font-semibold uppercase tracking-wider text-sm mb-2">FAQ</h4>
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark dark:text-white mb-4">Pertanyaan Seputar Layanan</h2>
-          <p className="text-gray-600 dark:text-gray-400">Temukan jawaban atas pertanyaan yang sering diajukan terkait proses konsultasi dan pelayanan di TAT & Partners.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Pertanyaan Seputar Layanan</h2>
+          <p className="text-muted-foreground">Temukan jawaban atas pertanyaan yang sering diajukan terkait proses konsultasi dan pelayanan di TAT & Partners.</p>
         </div>
 
         <div className="max-w-4xl mx-auto border border-border bg-card rounded-2xl overflow-hidden shadow-sm transition-colors">
           {faqs.map((faq, idx) => (
-            <div key={idx} className={`border-b border-border last:border-b-0 transition-colors ${openIdx === idx ? 'bg-brand-blue/5 dark:bg-brand-blue/10' : 'bg-card'}`}>
+            <div key={idx} className={`border-b border-border last:border-b-0 transition-all ${openIdx === idx ? 'bg-slate-50 dark:bg-slate-800/40 border-l-4 border-l-brand-blue' : 'bg-card border-l-4 border-l-transparent'}`}>
               <button 
                 onClick={() => toggle(idx)}
-                className="w-full flex justify-between items-center text-left p-6 gap-4 hover:text-brand-blue transition-colors outline-none"
+                className="w-full flex justify-between items-center text-left p-6 gap-4 hover:text-brand-blue transition-colors outline-none group/faq"
               >
-                <span className="font-semibold text-lg text-brand-dark dark:text-gray-100">{faq.q}</span>
-                <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-muted flex items-center justify-center transition-all duration-300 ${openIdx === idx ? 'rotate-180 bg-brand-blue text-white' : 'text-muted-foreground'}`}>
+                <span className={`font-semibold text-lg transition-colors ${openIdx === idx ? 'text-brand-blue dark:text-brand-blue-light' : 'text-foreground'}`}>{faq.q}</span>
+                <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-muted flex items-center justify-center transition-all duration-300 ${openIdx === idx ? 'rotate-180 bg-brand-blue text-white shadow-md' : 'text-muted-foreground group-hover/faq:bg-brand-blue/10 group-hover/faq:text-brand-blue'}`}>
                   <ChevronDown size={20} />
                 </div>
               </button>
@@ -61,7 +61,9 @@ export default function FAQ() {
                   openIdx === idx ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed pl-4 border-l-2 border-brand-blue/30">{faq.a}</p>
+                <div className="pl-4 pb-2">
+                  <p className="text-foreground/80 dark:text-gray-300 leading-relaxed text-base">{faq.a}</p>
+                </div>
               </div>
             </div>
           ))}
