@@ -34,24 +34,24 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 bg-brand-silver">
+    <section className="py-20 bg-background dark:bg-section-bg transition-colors">
       <div className="container mx-auto px-4 md:px-6">
         
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h4 className="text-brand-blue font-semibold uppercase tracking-wider text-sm mb-2">FAQ</h4>
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Pertanyaan Seputar Layanan</h2>
-          <p className="text-gray-600">Temukan jawaban atas pertanyaan yang sering diajukan terkait proses konsultasi dan pelayanan di TAT & Partners.</p>
+          <h4 className="text-brand-blue dark:text-brand-blue-light font-semibold uppercase tracking-wider text-sm mb-2">FAQ</h4>
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark dark:text-white mb-4">Pertanyaan Seputar Layanan</h2>
+          <p className="text-gray-600 dark:text-gray-400">Temukan jawaban atas pertanyaan yang sering diajukan terkait proses konsultasi dan pelayanan di TAT & Partners.</p>
         </div>
 
-        <div className="max-w-4xl mx-auto border border-gray-200 bg-white rounded-2xl overflow-hidden shadow-sm">
+        <div className="max-w-4xl mx-auto border border-border bg-card rounded-2xl overflow-hidden shadow-sm transition-colors">
           {faqs.map((faq, idx) => (
-            <div key={idx} className={`border-b border-gray-100 last:border-b-0 ${openIdx === idx ? 'bg-brand-blue/5' : 'bg-white'}`}>
+            <div key={idx} className={`border-b border-border last:border-b-0 transition-colors ${openIdx === idx ? 'bg-brand-blue/5 dark:bg-brand-blue/10' : 'bg-card'}`}>
               <button 
                 onClick={() => toggle(idx)}
                 className="w-full flex justify-between items-center text-left p-6 gap-4 hover:text-brand-blue transition-colors outline-none"
               >
-                <span className="font-semibold text-lg text-brand-dark">{faq.q}</span>
-                <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center transition-transform duration-300 ${openIdx === idx ? 'rotate-180 bg-brand-blue text-white' : 'text-gray-400'}`}>
+                <span className="font-semibold text-lg text-brand-dark dark:text-gray-100">{faq.q}</span>
+                <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-muted flex items-center justify-center transition-all duration-300 ${openIdx === idx ? 'rotate-180 bg-brand-blue text-white' : 'text-muted-foreground'}`}>
                   <ChevronDown size={20} />
                 </div>
               </button>
@@ -61,7 +61,7 @@ export default function FAQ() {
                   openIdx === idx ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <p className="text-gray-600 leading-relaxed pl-4 border-l-2 border-brand-blue/30">{faq.a}</p>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed pl-4 border-l-2 border-brand-blue/30">{faq.a}</p>
               </div>
             </div>
           ))}

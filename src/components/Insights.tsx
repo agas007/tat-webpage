@@ -7,30 +7,37 @@ export default function Insights() {
       title: "Gagasan Reformasi Perpajakan: Jaga Ekonomi, Jamin Penerimaan",
       date: "12 Oct 2026",
       category: "Regulasi",
-      tag: "Terbaru"
+      tag: "Terbaru",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
+      desc: "Reformasi perpajakan menjadi pilar penting dalam menjaga stabilitas ekonomi nasional dan menjamin penerimaan negara yang berkelanjutan."
     },
     {
       title: "On 'High Alert': Indonesia's Tax Dispute Environment and Rules",
       date: "05 Oct 2026",
       category: "Artikel",
-      tag: "Populer"
+      tag: "Populer",
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+      desc: "An in-depth analysis of the current state of tax disputes in Indonesia and the evolving regulatory landscape that businesses need to navigate."
     },
     {
       title: "Kajian Persiapan Penyatuan Atap Pengadilan Pajak",
       date: "28 Sep 2026",
       category: "Kajian",
-      tag: "Analisis Khusus"
+      tag: "Analisis Khusus",
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800",
+      desc: "Meninjau kesiapan infrastruktur dan regulasi dalam rencana penyatuan sistem peradilan pajak di Indonesia."
     }
   ];
 
   return (
-    <section id="wawasan" className="py-24 bg-white">
+    <section id="wawasan" className="py-24 bg-background dark:bg-section-bg transition-colors">
       <div className="container mx-auto px-4 md:px-6">
         
         <div className="flex justify-between items-end mb-12">
-          <div>
-            <h4 className="text-brand-blue font-semibold uppercase tracking-wider text-sm mb-2">Wawasan Terkini</h4>
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark">Berita & Analisis Pajak</h2>
+          <div className="max-w-3xl">
+            <h4 className="text-brand-blue dark:text-brand-blue-light font-semibold uppercase tracking-wider text-sm mb-2">Wawasan</h4>
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark dark:text-white mb-4">Publikasi Terkini</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">Ikuti perkembangan regulasi perpajakan terbaru dan analisis mendalam dari tim ahli kami.</p>
           </div>
           <Link href="#wawasan" className="hidden sm:flex items-center gap-2 text-brand-blue font-semibold hover:text-brand-blue-dark transition-colors group">
             Lihat Semua Artikel
@@ -41,33 +48,23 @@ export default function Insights() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-gray-100 pt-8">
           {articles.map((article, idx) => (
             <div key={idx} className="group cursor-pointer flex flex-col h-full">
-              <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl overflow-hidden mb-6 relative">
-                {/* Image Placeholder */}
-                <div className="absolute inset-0 bg-brand-silver mix-blend-multiply group-hover:bg-brand-blue/5 transition-colors duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-sm font-medium">Image Preview</div>
-                <div className="absolute top-4 left-4 bg-white px-3 py-1 text-xs font-bold rounded shadow-sm text-brand-dark">
-                  {article.category}
+              <div className="relative h-64 overflow-hidden rounded-xl mb-6">
+                <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute top-4 left-4 bg-card px-3 py-1 text-xs font-bold rounded shadow-sm text-foreground">
+                  {article.tag}
                 </div>
               </div>
               
-              <div className="flex items-center gap-4 text-xs font-medium text-gray-500 mb-3">
-                <span className="flex items-center gap-1.5 bg-gray-50 px-2 py-1 rounded text-brand-blue border border-brand-blue/10">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-blue"></span>
-                  {article.tag}
-                </span>
-                <span className="flex items-center gap-1">
-                  <Calendar size={14} />
-                  {article.date}
-                </span>
-              </div>
-              
-              <h3 className="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-blue transition-colors leading-snug flex-grow">
-                {article.title}
-              </h3>
-              
-              <div className="flex items-center gap-2 text-sm font-semibold text-brand-blue mt-4">
-                Baca Selengkapnya
-                <ArrowRight size={16} />
+              <div className="p-8 flex flex-col flex-1 bg-card transition-colors">
+                <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
+                  <span className="flex items-center gap-1"><Calendar size={14} /> {article.date}</span>
+                </div>
+                <h3 className="text-xl font-bold text-brand-dark dark:text-white mb-3 group-hover:text-brand-blue transition-colors leading-tight">{article.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-2">{article.desc}</p>
+                <div className="mt-auto flex items-center text-brand-blue dark:text-brand-blue-light font-bold text-sm">
+                  Baca Selengkapnya
+                  <ArrowRight size={18} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
             </div>
           ))}

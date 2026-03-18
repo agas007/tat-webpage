@@ -39,13 +39,13 @@ export default function Leadership() {
   ];
 
   return (
-    <section id="tim" className="py-24 bg-white relative">
+    <section id="tim" className="py-24 bg-background dark:bg-section-bg transition-colors relative">
       <div className="container mx-auto px-4 md:px-6">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h4 className="text-brand-blue font-semibold uppercase tracking-wider text-sm mb-2">Partner Kami</h4>
-          <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4">Kepemimpinan</h2>
-          <p className="text-gray-600 text-lg">Didukung oleh profesional berpengalaman dengan lisensi resmi dan rekam jejak yang terbukti di bidang perpajakan dan akuntansi.</p>
+          <h4 className="text-brand-blue dark:text-brand-blue-light font-semibold uppercase tracking-wider text-sm mb-2">Partner Kami</h4>
+          <h2 className="text-3xl md:text-5xl font-bold text-brand-dark dark:text-white mb-4">Kepemimpinan</h2>
+          <p className="text-gray-600 dark:text-gray-300 text-lg">Didukung oleh profesional berpengalaman dengan lisensi resmi dan rekam jejak yang terbukti di bidang perpajakan dan akuntansi.</p>
         </div>
 
         {/* Top 2 Partners (Managing & Operational) */}
@@ -72,9 +72,9 @@ export default function Leadership() {
                 </div>
               </div>
               <div className="text-center">
-                <h3 className="text-xl font-bold text-brand-dark">{partner.name}</h3>
-                <p className="text-xs text-gray-500 font-medium mb-1">{partner.title}</p>
-                <div className="inline-block px-3 py-1 rounded bg-brand-blue/10 text-brand-blue text-sm font-semibold mt-2">
+                <h3 className="text-xl font-bold text-brand-dark dark:text-white">{partner.name}</h3>
+                <p className="text-xs text-gray-500 dark:text-gray-400 font-medium mb-1">{partner.title}</p>
+                <div className="inline-block px-3 py-1 rounded bg-brand-blue/10 dark:bg-brand-blue/20 text-brand-blue dark:text-brand-blue-light text-sm font-semibold mt-2">
                   {partner.role}
                 </div>
               </div>
@@ -97,9 +97,9 @@ export default function Leadership() {
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-lg font-bold text-brand-dark">{partner.name}</h3>
-                <p className="text-[11px] text-gray-500 font-medium mb-1">{partner.title}</p>
-                <p className="text-brand-blue text-sm font-medium">{partner.role}</p>
+                <h3 className="text-lg font-bold text-brand-dark dark:text-white">{partner.name}</h3>
+                <p className="text-[11px] text-gray-500 dark:text-gray-400 font-medium mb-1">{partner.title}</p>
+                <p className="text-brand-blue dark:text-brand-blue-light text-sm font-medium">{partner.role}</p>
               </div>
             </div>
           ))}

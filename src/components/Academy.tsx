@@ -23,7 +23,7 @@ export default function Academy() {
   ];
 
   return (
-    <section className="py-24 bg-brand-dark text-white relative overflow-hidden">
+    <section className="py-24 bg-brand-dark dark:bg-black text-white relative overflow-hidden transition-colors">
       {/* Background Graphic */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-blue/20 transform skew-x-12 translate-x-32 hidden lg:block"></div>
       
@@ -31,11 +31,11 @@ export default function Academy() {
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <h4 className="text-blue-400 font-semibold uppercase tracking-wider text-sm mb-2">Pendidikan & Pelatihan</h4>
+            <h4 className="text-brand-blue-light font-semibold uppercase tracking-wider text-sm mb-2">Pendidikan & Pelatihan</h4>
             <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">TATax Academy.</h2>
             <p className="text-gray-300 text-lg">Dedikasi kami tidak hanya pada layanan konsultasi, melainkan juga pada pengembangan sumber daya manusia melalui edukasi perpajakan yang berkualitas.</p>
           </div>
-          <button className="hidden md:inline-flex px-6 py-3 rounded-md bg-white text-brand-dark font-semibold hover:bg-gray-100 transition-colors">
+          <button className="hidden md:inline-flex px-6 py-3 rounded-md bg-white dark:bg-brand-blue text-brand-dark dark:text-white font-semibold hover:bg-brand-blue hover:text-white transition-all transform hover:-translate-y-0.5">
             Lihat Jadwal Terdekat
           </button>
         </div>

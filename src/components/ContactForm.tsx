@@ -1,6 +1,6 @@
 export default function ContactForm() {
   return (
-    <section id="konsultasi" className="py-24 bg-brand-silver relative overflow-hidden">
+    <section id="konsultasi" className="py-24 bg-background dark:bg-section-bg relative overflow-hidden transition-colors">
       {/* Abstract background lines mimicking DDTC style */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -14,7 +14,7 @@ export default function ContactForm() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 items-center bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div className="flex flex-col lg:flex-row gap-16 items-center bg-card rounded-3xl shadow-xl overflow-hidden border border-border transition-colors">
           
           <div className="w-full lg:w-5/12 p-10 lg:p-14 bg-brand-blue text-white h-full relative overflow-hidden">
             <div className="absolute right-0 bottom-0 opacity-10 transform scale-150 translate-x-1/4 translate-y-1/4">
@@ -41,7 +41,7 @@ export default function ContactForm() {
                     type="email" 
                     id="email" 
                     placeholder="Email Anda" 
-                    className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+                    className="w-full px-5 py-4 rounded-xl border border-border bg-background text-foreground placeholder-gray-400 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
                   />
                 </div>
                 <div>
@@ -50,7 +50,7 @@ export default function ContactForm() {
                     type="tel" 
                     id="phone" 
                     placeholder="Nomor Ponsel Anda" 
-                    className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
+                    className="w-full px-5 py-4 rounded-xl border border-border bg-background text-foreground placeholder-gray-400 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all"
                   />
                 </div>
               </div>
@@ -60,7 +60,7 @@ export default function ContactForm() {
                 <select 
                   id="reason" 
                   defaultValue=""
-                  className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all appearance-none bg-white text-gray-500"
+                  className="w-full px-5 py-4 rounded-xl border border-border focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all appearance-none bg-background text-foreground"
                 >
                   <option value="" disabled>Alasan untuk menghubungi</option>
                   <option value="konsultasi">Konsultasi Layanan</option>
@@ -76,7 +76,7 @@ export default function ContactForm() {
                   id="message" 
                   rows={5}
                   placeholder="Bagaimana kami dapat membantu Anda?" 
-                  className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all resize-none"
+                  className="w-full px-5 py-4 rounded-xl border border-border bg-background text-foreground placeholder-gray-400 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all resize-none"
                 ></textarea>
               </div>
               
